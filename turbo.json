@@ -1,26 +1,26 @@
 {
-  "$schema": "https://turborepo.dev/schema.json",
-  "tasks": {
-    "//#lint": {
-      "cache": true
-    },
-    "build": {
-        "description": "Compiles TypeScript and bundles the application",
-        "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
-    },
-    "test": {
-      "description": "Runs the test suite with coverage",
-      "dependsOn": ["build"]
-    },
-    "check-types": {
-        "description": "Checks TypeScript types",
-      "dependsOn": ["^check-types"]
-    },
-    "dev": {
-        "description": "Starts the development server",
-      "persistent": true,
-      "cache": false
+    "$schema": "https://turborepo.dev/schema.json",
+    "tasks": {
+        "//#lint": {
+            "cache": true
+        },
+        "build": {
+            "description": "Compiles TypeScript and bundles the application",
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"]
+        },
+        "test": {
+            "description": "Runs the test suite with coverage",
+            "dependsOn": ["build"]
+        },
+        "check-types": {
+            "description": "Checks TypeScript types",
+            "dependsOn": ["^check-types"]
+        },
+        "dev": {
+            "description": "Starts the development server",
+            "persistent": true,
+            "cache": false
+        }
     }
-  }
 }
