@@ -6,13 +6,18 @@
     ],
     "scripts": {
         "clean": "rimraf **/dist **/.turbo --glob",
-        "reinstall": "rimraf **/node_modules bun.lock --glob && bun install",
+        "dev": "turbo dev",
+        "postinstall": "bunx --bun typesync",
+        "knip": "bunx --bun knip",
         "lint": "biome check --write --unsafe --no-errors-on-unmatched .",
-        "dev": "turbo dev"
+        "prepare": "lefthook install",
+        "reinstall": "rimraf **/node_modules bun.lock --glob && bun install"
     },
     "devDependencies": {
         "@biomejs/biome": "2.3.14",
         "@bun-security-scanner/osv": "^1.0.0",
+        "@commitlint/config-conventional": "^20.4.1",
+        "lefthook": "^2.1.0",
         "rimraf": "^6.1.2",
         "turbo": "^2.8.3"
     },

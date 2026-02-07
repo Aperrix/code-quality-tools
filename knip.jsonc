@@ -1,0 +1,25 @@
+{
+    "$schema": "https://unpkg.com/knip@latest/schema-jsonc.json",
+    "tags": ["-lintignore"],
+    "ignoreDependencies": [
+        "@bun-security-scanner/osv" // Used in bunfig.toml
+    ],
+    "lefthook": {
+        "config": [
+            "lefthook.json",
+            ".git/hooks/prepare-commit-msg",
+            ".git/hooks/commit-msg",
+            ".git/hooks/pre-{applypatch,commit,merge-commit,push,rebase,receive}",
+            ".git/hooks/post-{checkout,commit,merge,rewrite}"
+        ]
+    },
+    "bun": {
+        "config": ["bunfig.toml"]
+    },
+    "commitlint": {
+        "config": [".commitlintrc.json"]
+    },
+    "workspaces": {
+        ".": {}
+    }
+}
